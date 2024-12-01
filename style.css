@@ -1,0 +1,63 @@
+/* Body */
+body {
+    font-family: Arial, sans-serif; /* Standaard lettertype */
+    text-align: center; /* Tekst gecentreerd */
+    margin: 0; /* Geen marge */
+    padding: 0; /* Geen padding */
+    display: flex; /* Flexbox voor uitlijning */
+    align-items: center; /* Verticaal gecentreerd */
+    justify-content: center; /* Horizontaal gecentreerd */
+    height: 100vh; /* Volledige hoogte van scherm */
+    background-color: whitesmoke; /* Lichtgrijze achtergrondkleur */
+}
+
+/* Container voor alle elementen van het spel */
+#game-container {
+    width: 90%; /* Past binnen 90% van de breedte */;
+}
+
+/* Batterijpercentage */
+#battery-percentage {
+    font-size: 32px; /* Groot lettertype */
+    font-weight: bold; /* Vetgedrukt */
+    margin-bottom: 10px; /* Ruimte onder het percentage */
+}
+
+/* Batterij-laadbalk container */
+#progress-bar {
+    width: 100%; /* Volledige breedte van de container */
+    height: 30px; /* Hoogte van de laadbalk */
+    background-color: grey; /* Lichtgrijze achtergrond */
+    border-radius: 15px; /* Ronde hoeken */
+    overflow: hidden; /* Voorkomt overflow van inhoud */
+    margin-bottom: 20px; /* Ruimte onder de balk */
+}
+
+/* Vulling van de laadbalk (groene batterijstatus) */
+#progress-fill {
+    height: 100%; /* Hele hoogte van de balk */
+    background-color: green; /* Groene kleur voor opgeladen batterij */
+    width: 100%; /* Begint op 100% breedte */
+    transition: width 0.5s; /* Animatie bij verandering */
+}
+
+/* Inputveld voor het invoeren van codes */
+#code-input {
+    font-size: 18px; /* Lettergrootte */
+    padding: 10px; /* Binnenruimte in het veld */
+    width: 200px; /* Breedte van het veld */
+}
+
+/* Stijl voor de knop */
+#submit-button {
+    font-size: 18px; /* Lettergrootte */
+    padding: 10px 20px; /* Binnenruimte van de knop */
+    margin-left: 10px; /* Ruimte naast het invoerveld */
+}
+
+/* Bericht voor feedback aan de gebruiker */
+#message {
+    font-size: 16px; /* Lettergrootte van het bericht */
+    color: #333; /* Donkergrijze tekstkleur */
+    margin-top: 20px; /* Ruimte boven het bericht */
+}

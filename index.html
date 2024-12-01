@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Meta tags -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Title in browser -->
+    <title>V3 - Laadstationsspel</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="game-container">
+        <!-- Titel van het spel -->
+        <h1>Laadstationsspel</h1>
+        
+        <!-- Groot batterijpercentage boven de laadbalk -->
+        <p id="battery-percentage">100%</p>
+        
+        <!-- Container voor de batterij-laadbalk -->
+        <div id="progress-bar">
+            <div id="progress-fill"></div>
+        </div>
+        
+        <!-- Instructies voor de speler -->
+        <p>Voer een 4-cijferige code in om je batterij op te laden:</p>
+        
+        <!-- Inputveld voor de speler om een code in te voeren -->
+        <input type="text" id="code-input" maxlength="4" placeholder="1234">
+        
+        <!-- Knop om de ingevoerde code in te dienen -->
+        <button id="submit-button">Invoeren</button>
+        
+        <!-- Bericht waar feedback wordt getoond -->
+        <p id="message"></p>
+    </div>
+    
+    <!-- JavaScript -->
+    <script src="script.js" type="module"></script>
+</body>
+</html>
