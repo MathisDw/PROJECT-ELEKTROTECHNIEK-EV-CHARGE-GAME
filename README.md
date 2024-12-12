@@ -1,3 +1,3 @@
 # ChargingStationGame
 Website for game:
-https://mathisdw.github.io/ChargingStationGame/ 
+https://mathisdw.github.io/PROJECT-ELEKTROTECHNIEK-EV-CHARGE-GAME/
