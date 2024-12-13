@@ -63,3 +63,24 @@ body {
     color: black; /* Zwarte tekstkleur */
     margin-top: 20px; /* Ruimte boven het bericht */
 }
+
+/*kaart*/
+img {
+    max-width: 100%; /* Zorgt ervoor dat de afbeelding niet breder wordt dan de container */
+    height: auto; /* Past de hoogte aan op basis van de breedte */
+    display: block; /* Voorkomt extra witruimte onder de afbeelding */
+    margin: 0 auto; /* Centreert de afbeelding horizontaal */
+}
+
+@media (max-width: 768px) { /* Voor tablets en kleinere apparaten */
+    img {
+        width: 90%; /* Zorg ervoor dat de afbeelding 90% van de breedte inneemt */
+    }
+}
+
+@media (max-width: 480px) { /* Voor kleine GSM-schermen */
+    img {
+        width: 100%; /* Zorgt dat de afbeelding de volledige breedte van de container inneemt */
+    }
+}
+
