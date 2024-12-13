@@ -8,12 +8,14 @@ body {
     align-items: center; /* Verticaal gecentreerd */
     justify-content: center; /* Horizontaal gecentreerd */
     height: 100vh; /* Volledige hoogte van scherm */
-    background-color: whitesmoke; /* Lichtgrijze achtergrondkleur */
+    background-color: whitesmoke; /* Donkerwitte achtergrondkleur */
 }
 
 /* Container voor alle elementen van het spel */
 #game-container {
     width: 90%; /* Past binnen 90% van de breedte */;
+    padding-top: 300px; /* Voeg padding toe bovenaan de container */
+    padding-bottom: 100px ;
 }
 
 /* Batterijpercentage */
@@ -27,7 +29,7 @@ body {
 #progress-bar {
     width: 100%; /* Volledige breedte van de container */
     height: 30px; /* Hoogte van de laadbalk */
-    background-color: grey; /* Lichtgrijze achtergrond */
+    background-color: grey; /* Grijze achtergrond */
     border-radius: 15px; /* Ronde hoeken */
     overflow: hidden; /* Voorkomt overflow van inhoud */
     margin-bottom: 20px; /* Ruimte onder de balk */
@@ -58,6 +60,6 @@ body {
 /* Bericht voor feedback aan de gebruiker */
 #message {
     font-size: 16px; /* Lettergrootte van het bericht */
-    color: #333; /* Donkergrijze tekstkleur */
+    color: black; /* Zwarte tekstkleur */
     margin-top: 20px; /* Ruimte boven het bericht */
 }
