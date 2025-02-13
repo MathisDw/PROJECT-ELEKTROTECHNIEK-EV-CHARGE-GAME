@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EV Charge & Quiz Game</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="start-page">
+        <h1>Welcome to the EV Charge & Quiz Game</h1>
+        <p>Test your knowledge and keep your battery charged!</p>
+        <button id="start-game-button">Start Game</button>
+    </div>
+
+    <div id="game-container" style="display: none;">
+        <h1>EV Charge & Quiz Game</h1>
+        <p id="battery-percentage">100%</p>
+        <div id="progress-bar">
+            <div id="progress-fill"></div>
+        </div>
+
+        <!-- Quiz Section -->
+        <div id="quiz-container">
+            <h2>Quiz Section</h2>
+            <p id="question"></p>
+            <input type="text" id="answer-input" placeholder="Type your answer here">
+            <button id="submit-answer-button">Submit Answer</button>
+            <p id="quiz-message"></p>
+        </div>
+
+        <!-- Map Button -->
+        <button id="toggle-map-button">Show Map</button>
+    </div>
+
+    <div id="score-container" style="display: none;">
+        <h2>Thanks for playing!</h2>
+        <div id="score"></div>
+        <button id="restart-game-button">Restart Game</button>
+    </div>
+
+    <!-- Map Pop-up -->
+    <div id="map-overlay"></div>
+    <div id="map-container">
+        <h2>Map</h2>
+        <img id="map-image" src="images/map.png" alt="Map">
+        <button id="close-map-button">Close</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

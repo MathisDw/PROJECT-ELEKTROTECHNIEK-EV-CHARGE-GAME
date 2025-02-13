@@ -1,0 +1,14 @@
+{
+    "questions": [
+        { "question": "What is the answer for the 1st charging station?", "answer": "1" },
+        { "question": "What is the answer for the 2nd charging station?", "answer": "2" },
+        { "question": "What is the answer for the 3rd charging station?", "answer": "3" },
+        { "question": "What is the answer for the 4th charging station?", "answer": "4" },
+        { "question": "What is the answer for the 5th charging station?", "answer": "5" },
+        { "question": "What is the answer for the 6th charging station?", "answer": "6" },
+        { "question": "What is the answer for the 7th charging station?", "answer": "7" },
+        { "question": "What is the answer for the 8th charging station?", "answer": "8" },
+        { "question": "What is the answer for the 9th charging station?", "answer": "9" },
+        { "question": "What is the answer for the 10th charging station?", "answer": "10" }
+    ]
+}
