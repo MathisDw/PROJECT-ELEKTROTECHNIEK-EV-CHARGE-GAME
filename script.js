@@ -97,14 +97,20 @@ function checkAnswer() {
     const currentQuestion = questions[currentQuestionIndex];
 
     if (userAnswer.toLowerCase() === currentQuestion.answer.toLowerCase()) {
-        batteryLevel = Math.min(100, batteryLevel + 20);
+        // Laatste antwoord geeft geen batterijbonus meer
+        if (currentQuestionIndex < 9) { // Alleen opladen als het NIET de laatste vraag is
+            batteryLevel = Math.min(100, batteryLevel + 20);
+        }
+
         currentQuestionIndex++;
+
         if (currentQuestionIndex < 10) {
             displayQuestion();
         } else {
             endGame(true);
         }
-        quizMessage.textContent = "Correct answer! Battery charged.";
+
+        quizMessage.textContent = "Correct answer! " + (currentQuestionIndex < 10 ? "Battery charged." : "");
     } else {
         batteryLevel -= 15;
         if (batteryLevel < 0) batteryLevel = 0;
