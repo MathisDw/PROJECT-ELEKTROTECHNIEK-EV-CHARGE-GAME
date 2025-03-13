@@ -80,3 +80,20 @@ input {
     max-width: 100%;
     height: auto;
 }
+
+form {
+    max-width: 400px;
+    margin: 25px auto;
+    padding: 20px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+ul {
+    list-style-type: none;
+    display: inline-block;
+    text-align: left;
+    margin: 0 auto;
+    padding-left: 0;
+}
