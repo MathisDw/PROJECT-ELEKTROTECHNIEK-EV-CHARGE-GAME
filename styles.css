@@ -69,11 +69,11 @@ input {
     left: 50%;
     transform: translate(-50%, -50%);
     background-color: white;
-    padding: 20px;
+    padding: auto;
     border-radius: 10px;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
     z-index: 1000;
-    max-width: 100%;
+    max-width: auto;
 }
 
 #map-container img {
