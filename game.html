@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EV Charge Game</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="start-page">
+        <h1>Welkom bij onze EV Charge Game!</h1>
+        <p>Test je technische kennis en laad je batterij op terwijl je de school verkent!</p>
+        <button id="start-game-button">Start Game</button>
+    </div>
+
+    <div id="game-container" style="display: none;">
+        <h1>EV Charge Game</h1>
+        <p id="battery-percentage">100%</p>
+        <div id="progress-bar">
+            <div id="progress-fill"></div>
+        </div>
+
+        <!-- Quiz Section -->
+        <div id="quiz-container">
+            <h2>Quiz</h2>
+            <p id="question"></p>
+            <input type="text" id="answer-input" placeholder="Geef hier je antwoord">
+            <button id="submit-answer-button">Verzenden</button>
+            <p id="quiz-message"></p>
+        </div>
+
+        <!-- Map Button -->
+        <button id="toggle-map-button">Toon kaart</button>
+    </div>
+
+    <div id="score-container" style="display: none;">
+        <h2>Bedankt voor het spelen!</h2>
+        <div id="score"></div>
+        <button id="restart-game-button">Restart Game</button>
+    </div>
+
+    <!-- Map Pop-up -->
+    <div id="map-overlay"></div>
+    <div id="map-container">
+        <h2>Map</h2>
+        <img id="map-image" src="images/map.png" alt="Map">
+        <button id="close-map-button">Terug</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
