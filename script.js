@@ -26,9 +26,9 @@ function loadQuestions() {
     fetch('data/questions.json')
         .then(response => response.json())
         .then(data => {
-            questions = data.questions.slice(0, 10); // Zorgt ervoor dat er maximaal 10 vragen worden geladen
-            if (questions.length < 10) {
-                console.error("Er moeten minstens 10 vragen in de JSON staan.");
+            questions = data.questions.slice(0, 8); // Zorgt ervoor dat er maximaal 8 vragen worden geladen
+            if (questions.length < 8) {
+                console.error("Er moeten minstens 8 vragen in de JSON staan.");
                 quizMessage.textContent = "Er zijn niet genoeg vragen beschikbaar. Voeg meer toe.";
                 return;
             }
@@ -81,7 +81,7 @@ function startBatteryDrain() {
 
 // Display quiz question
 function displayQuestion() {
-    if (currentQuestionIndex >= 10) {
+    if (currentQuestionIndex >= 8) {
         endGame(true);
         return;
     }
@@ -98,23 +98,23 @@ function checkAnswer() {
 
     if (userAnswer.toLowerCase() === currentQuestion.answer.toLowerCase()) {
         // Laatste antwoord geeft geen batterijbonus meer
-        if (currentQuestionIndex < 9) { // Alleen opladen als het NIET de laatste vraag is
+        if (currentQuestionIndex < 7) { // Alleen opladen als het NIET de laatste vraag is
             batteryLevel = Math.min(100, batteryLevel + 20);
         }
 
         currentQuestionIndex++;
 
-        if (currentQuestionIndex < 10) {
+        if (currentQuestionIndex < 8) {
             displayQuestion();
         } else {
             endGame(true);
         }
 
-        quizMessage.textContent = "Correct answer! " + (currentQuestionIndex < 10 ? "Battery charged." : "");
+        quizMessage.textContent = "Correct antwoord! " + (currentQuestionIndex < 8 ? "Batterij opgeladen." : "");
     } else {
         batteryLevel -= 15;
         if (batteryLevel < 0) batteryLevel = 0;
-        quizMessage.textContent = "Wrong answer! Try again.";
+        quizMessage.textContent = "Fout antwoord ! Probeer opnieuw.";
         if (batteryLevel <= 0) {
             endGame(false);
         }
@@ -129,9 +129,9 @@ function endGame(won) {
     scoreContainer.style.display = "block";
     const scoreText = document.getElementById("score");
     scoreText.innerHTML = `
-        <p>${won ? "Congratulations! You won!" : "Game Over! You lost."}</p>
-        <p>Final Battery Level: ${Math.round(batteryLevel)}%</p>
-        <p>Questions Answered: ${currentQuestionIndex} / 10</p>
+        <p>${won ? "Proficiat! Je hebt gewonnen!" : "Game Over! Jammer."}</p>
+        <p>Batterij score: ${Math.round(batteryLevel)}%</p>
+        <p>Aantal vragen opgelost: ${currentQuestionIndex} / 8</p>
     `;
 }
 
