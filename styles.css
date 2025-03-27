@@ -63,20 +63,23 @@ input {
 }
 
 #map-container {
-    display: none;
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background-color: white;
-    padding: auto;
-    border-radius: 10px;
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
-    z-index: 1000;
-    max-width: auto;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80%;
+  height: auto;
+  background: white;
+  text-align: center;
+  padding: 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  display: none; /* Verberg standaard */
+  z-index: 1000; /* Zorg ervoor dat het boven andere elementen komt */
+  border-radius: 10px
 }
 
 #map-container img {
+    position: ;
     max-width: 100%;
     height: auto;
 }
@@ -96,4 +99,12 @@ ul {
     text-align: left;
     margin: 0 auto;
     padding-left: 0;
+}
+
+#close-map-button {
+    background-color: red;
+}
+
+#close-map-button:hover {
+    background-color: rgb(219, 0, 0);
 }
