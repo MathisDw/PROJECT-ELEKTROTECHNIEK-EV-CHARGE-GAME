@@ -1,52 +1,54 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="nl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>EV Charge Game</title>
+    <title>EV Charge Game - startpagina</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div id="start-page">
-        <h1>Welkom bij onze EV Charge Game!</h1>
-        <p>Test je technische kennis en laad je batterij op terwijl je de school verkent!</p>
-        <button id="start-game-button">Start Game</button>
-    </div>
+    <h1>EV Charge Game</h1>
 
-    <div id="game-container" style="display: none;">
-        <h1>EV Charge Game</h1>
-        <p id="battery-percentage">100%</p>
-        <div id="progress-bar">
-            <div id="progress-fill"></div>
-        </div>
+    <h2>Regels</h2>
+    <ul>
+        <li>1. Je start met een volle batterij (100%).</li>
+        <li>2. Beantwoord 8 quizvragen correct om te winnen.</li>
+        <li>3. De vragen zijn verspreid over 8 laadstations in de school.</li>
+        <br>
+        <li>4. Bij elk fout antwoord verlies je 15% van je batterij.</li>
+        <li>5. Bij een correct antwoord laad je 20% op.</li>
+        <li>6. Je batterij loopt langzaam leeg. Dus wees snel!</li>
+        <br>
+        <li>7. Het zijn meerkeuzevragen die je beantwoordt met: A, B, C</li>
+        <li>8. Is je batterij 0%? Game over!</li>
+        <li>9. Heb je alle 8 vragen opgelost? Je wint! 🎉</li>
+    </ul>
 
-        <!-- Quiz Section -->
-        <div id="quiz-container">
-            <h2>Quiz</h2>
-            <p id="question"></p>
-            <input type="text" id="answer-input" placeholder="Geef hier je antwoord">
-            <button id="submit-answer-button">Verzenden</button>
-            <p id="quiz-message"></p>
-        </div>
+    <h2>Win een ticket voor de racesimulator</h2>
+    <img id="map-image" src="images/racesimulator.png" alt="RACE SIMULATOR">
+    
+    <h2>Vul je gegevens in</h2>
+    <form id="playerForm">
+        <label for="firstName">Voornaam:</label>
+        <input type="text" id="firstName" name="firstName" required><br><br>
 
-        <!-- Map Button -->
-        <button id="toggle-map-button">Toon kaart</button>
-    </div>
+        <label for="lastName">Achternaam:</label>
+        <input type="text" id="lastName" name="lastName" required><br><br>
 
-    <div id="score-container" style="display: none;">
-        <h2>Bedankt voor het spelen!</h2>
-        <div id="score"></div>
-        <button id="restart-game-button">Restart Game</button>
-    </div>
+        <label for="age">Leeftijd:</label>
+        <input type="number" id="age" name="age" required><br><br>
 
-    <!-- Map Pop-up -->
-    <div id="map-overlay"></div>
-    <div id="map-container">
-        <h2>Map</h2>
-        <img id="map-image" src="images/map.png" alt="Map">
-        <button id="close-map-button">Terug</button>
-    </div>
+        <label for="email">E-mail:</label>
+        <input type="email" id="email" name="email" required><br><br>
 
-    <script src="script.js"></script>
+        <button type="submit">Verzenden</button>
+    </form>
+
+    <script>
+        document.getElementById("playerForm").addEventListener("submit", function(event) {
+            event.preventDefault(); // Voorkom standaardformulierverzending
+            window.location.href = "game.html"; // Stuur door naar game.html
+        });
+    </script>
 </body>
 </html>
