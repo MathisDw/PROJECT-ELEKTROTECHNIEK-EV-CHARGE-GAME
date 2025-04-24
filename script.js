@@ -15,8 +15,8 @@ const mapOverlay = document.getElementById("map-overlay");
 const closeMapButton = document.getElementById("close-map-button");
 
 // Game variables
-let batteryLevel = 100;  // Start with full battery
-const decreaseRate = 1;  // Battery drain rate per second
+let batteryLevel = 100;
+const decreaseRate = 1;
 let questions = [];
 let currentQuestionIndex = 0;
 let gameInterval;
@@ -26,7 +26,7 @@ function loadQuestions() {
     fetch('data/questions.json')
         .then(response => response.json())
         .then(data => {
-            questions = data.questions.slice(0, 8); // Zorgt ervoor dat er maximaal 8 vragen worden geladen
+            questions = data.questions.slice(0, 8);
             if (questions.length < 8) {
                 console.error("Er moeten minstens 8 vragen in de JSON staan.");
                 quizMessage.textContent = "Er zijn niet genoeg vragen beschikbaar. Voeg meer toe.";
@@ -97,8 +97,7 @@ function checkAnswer() {
     const currentQuestion = questions[currentQuestionIndex];
 
     if (userAnswer.toLowerCase() === currentQuestion.answer.toLowerCase()) {
-        // Laatste antwoord geeft geen batterijbonus meer
-        if (currentQuestionIndex < 7) { // Alleen opladen als het NIET de laatste vraag is
+        if (currentQuestionIndex < 7) {
             batteryLevel = Math.min(100, batteryLevel + 20);
         }
 
@@ -114,7 +113,7 @@ function checkAnswer() {
     } else {
         batteryLevel -= 15;
         if (batteryLevel < 0) batteryLevel = 0;
-        quizMessage.textContent = "Fout antwoord ! Probeer opnieuw.";
+        quizMessage.textContent = "Fout antwoord! Probeer opnieuw.";
         if (batteryLevel <= 0) {
             endGame(false);
         }
@@ -127,12 +126,52 @@ function endGame(won) {
     clearInterval(gameInterval);
     gameContainer.style.display = "none";
     scoreContainer.style.display = "block";
-    const scoreText = document.getElementById("score");
-    scoreText.innerHTML = `
-        <p>${won ? "Proficiat! Je hebt gewonnen!" : "Game Over! Jammer."}</p>
+    scoreContainer.innerHTML = ""; // Reset content
+
+    // Voeg titel toe
+    const title = document.createElement("h2");
+    title.textContent = won ? "Proficiat! Je hebt gewonnen!" : "Game Over! Jammer.";
+    title.style.fontSize = "24px";
+    title.style.fontWeight = "bold";
+    title.style.textAlign = "center";
+    scoreContainer.appendChild(title);
+
+    // Voeg score-info toe
+    const scoreInfo = document.createElement("p");
+    scoreInfo.innerHTML = `
         <p>Batterij score: ${Math.round(batteryLevel)}%</p>
         <p>Aantal vragen opgelost: ${currentQuestionIndex} / 8</p>
     `;
+    scoreInfo.style.textAlign = "center";
+    scoreContainer.appendChild(scoreInfo);
+
+    // Verwijder vorige QR-code of tekst als deze al bestaat
+    document.getElementById("qr-code")?.remove();
+    document.getElementById("qr-text")?.remove();
+
+    if (won) {
+        // Voeg tekst toe
+        const qrText = document.createElement("p");
+        qrText.id = "qr-text";
+        qrText.textContent = "Toon je QR-code om naar de racesimulator te gaan.";
+        qrText.style.fontWeight = "bold";
+        qrText.style.textAlign = "center";
+        scoreContainer.appendChild(qrText);
+
+        // Voeg QR-code toe
+        const qrImage = document.createElement("img");
+        qrImage.src = "images/QR-to-verify.png";
+        qrImage.alt = "QR Code om te verifiëren";
+        qrImage.id = "qr-code";
+        qrImage.style.display = "block";
+        qrImage.style.margin = "20px auto";
+        scoreContainer.appendChild(qrImage);
+    } else {
+        // Voeg de restart-knop toe en zorg dat hij gecentreerd blijft
+        restartGameButton.style.display = "block";
+        restartGameButton.style.margin = "20px auto";
+        scoreContainer.appendChild(restartGameButton);
+    }
 }
 
 // Show and hide map
