@@ -29,7 +29,7 @@ https://mathisdw.github.io/PROJECT-ELEKTROTECHNIEK-EV-CHARGE-GAME/
 
 ## data/
 
-- question.json
+- question.json  
   Vragen en antwoorden voor de game
 
 ## images/
