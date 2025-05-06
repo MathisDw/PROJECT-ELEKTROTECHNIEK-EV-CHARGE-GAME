@@ -1,12 +1,12 @@
 {
     "questions": [
         { "question": "Wat is het antwoord voor het 1ste laadstation?", "answer": "B" },
-        { "question": "Wat is het antwoord voor het 2de laadstation?", "answer": "A" },
-        { "question": "Wat is het antwoord voor het 3de laadstation?", "answer": "A" },
+        { "question": "Wat is het antwoord voor het 2de laadstation?", "answer": "B" },
+        { "question": "Wat is het antwoord voor het 3de laadstation?", "answer": "C" },
         { "question": "Wat is het antwoord voor het 4de laadstation?", "answer": "A" },
         { "question": "Wat is het antwoord voor het 5de laadstation?", "answer": "A" },
-        { "question": "Wat is het antwoord voor het 6de laadstation?", "answer": "B" },
-        { "question": "Wat is het antwoord voor het 7de laadstation?", "answer": "A" },
+        { "question": "Wat is het antwoord voor het 6de laadstation?", "answer": "A" },
+        { "question": "Wat is het antwoord voor het 7de laadstation?", "answer": "C" },
         { "question": "Wat is het antwoord voor het 8ste laadstation?", "answer": "B" }
     ]
 }
